@@ -57,12 +57,7 @@ function App() {
       setShowScore(true)
     }
   }
-
-  let answerHandler = (event) => {
-    console.log(event.target)
-  }
-
-
+  
   return (
     <div className="quiz-box">
     <div className="quiz-contiainer">
@@ -73,8 +68,8 @@ function App() {
           <div className='thequestion'>{questions[currentQuestion].questionText}</div>
       </div>
       <div className="answer">
-          {questions[currentQuestion].answerOptions.map((answerOption) => (
-            <button onClick={() => handleButtonClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
+          {questions[currentQuestion].answerOptions.map((answerOption,key) => (
+            <button key={key} onClick={() => handleButtonClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
             ))}
             </div>
             </>
